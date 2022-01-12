@@ -36,14 +36,13 @@ class Bird:
     # Check if bird collides with floor and pipes
     def collide(self, pipe_collection):
         if self.y + self.img.get_rect().height > FLOOR_HEIGHT:  # Check floor
-            print('floor collide')
             return True
         if len(pipe_collection.pipes) != 0:  # Check pipes
             pipe = pipe_collection.pipes[0]
             top_collide = self._overlap(pipe.x, pipe.top_height, pipe.PIPE_TOP)
-            bottom_collide = self._overlap(pipe.x, pipe.bottom_height, pipe.PIPE_BOTTOM)
-            if top_collide: print('top colldie')
-            if bottom_collide: print('bottom collide')
+            bottom_collide = self._overlap(pipe.x, pipe.bottom_height, pipe.PIPE_BOTTOM) 
+            if top_collide or bottom_collide:
+                return True
             return top_collide or bottom_collide
 
     def _overlap(self, x, y, img):
@@ -54,6 +53,8 @@ class Bird:
 
     # Draw the bird based on its tilt
     def draw(self, win):
-        self.img = pygame.transform.rotate(bird_img, self.rotation)
-        new_rect = self.img.get_rect(center=bird_img.get_rect(topleft=(self.x, self.y)).center)
-        win.blit(self.img, new_rect.topleft)
+        rotated_image = pygame.transform.rotate(bird_img, self.rotation)
+        new_rect = rotated_image.get_rect(center=self.img.get_rect(topleft=(self.x, self.y)).center)
+        win.blit(rotated_image, new_rect.topleft)
+        self.img = rotated_image
+

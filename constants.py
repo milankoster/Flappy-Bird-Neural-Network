@@ -3,14 +3,24 @@ TITLE = 'Flappy Bird'
 DISPLAY_WIDTH = 315
 DISPLAY_HEIGHT = 560
 FPS = 120
+
+# Game
 Y_LIMIT = 10
+
+# Score
+X_SCORE = int(DISPLAY_WIDTH / 2)
+Y_SCORE = 20
+SCORE_FONT = 'Bauhaus 93'
+SCORE_SIZE = 60
+WHITE = (255, 255, 255)
+
 
 
 # Files
 BASE_FILENAME = 'images/base.png'
 PIPE_FILENAME = 'images/pipe.png'
 BIRD_FILENAME = 'images/bird1.png'
-
+BACKGROUND_FILENAME = 'images/bg.png'
 
 # Ground Info
 FLOOR_HEIGHT = 450
@@ -35,3 +45,5 @@ MAX_ROTATION_UP = 25
 MAX_ROTATION_DOWN = -90
 ROT_VEL_INCREASE = 5
 ROT_VEL_DECREASE = 2
+BIRD_STARTER_X = 60
+BIRD_STARTER_Y = 250

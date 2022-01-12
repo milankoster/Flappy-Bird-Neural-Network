@@ -5,7 +5,7 @@ from bird import Bird
 from constants import *
 from ground import Base
 
-bg_img = pygame.image.load('images/bg.png')
+bg_img = pygame.image.load(BACKGROUND_FILENAME)
 bg_img = pygame.transform.scale(bg_img, (DISPLAY_WIDTH, DISPLAY_HEIGHT))
 
 
@@ -20,18 +20,23 @@ class Game:
         self.ground = Base(FLOOR_HEIGHT)
         self.pipe_collection = PipeCollection()
         self.game_display = pygame.display.set_mode((DISPLAY_WIDTH, DISPLAY_HEIGHT))
+        self.bird = Bird(BIRD_STARTER_X, BIRD_STARTER_Y)
 
     def run_game(self):
-        bird = Bird(60, 270)
         # Use Game loop and tick it at FPS count (30)
         while self.running:
             self.clock.tick(FPS)
-            self._handle_game_events(bird)
-            self._update(bird)
-            self._draw_window(bird)
+            self._handle_game_events(self.bird)
+            self._update(self.bird)
+            self._draw_window(self.bird)
 
-            if bird.collide(self.pipe_collection):
-                print('Collide')
+            if self.bird.collide(self.pipe_collection):
+                self.reset()
+
+    def reset(self):
+        self.pipe_collection = PipeCollection()
+        self.bird = Bird(BIRD_STARTER_X, BIRD_STARTER_Y)
+        self.score = 0
 
     def _update(self, bird):
         bird.move()
@@ -54,11 +59,7 @@ class Game:
         self.ground.draw(self.game_display)
         bird.draw(self.game_display)
 
-        font = pygame.font.SysFont('Bauhaus 93', 60)
-        white = (255, 255, 255)
-        x = int(DISPLAY_WIDTH / 2)
-        y = 20
-        draw_text(self.game_display, str(self.score), x, y, font, white)
+        draw_text(self.game_display, str(self.score), X_SCORE, Y_SCORE, SCORE_FONT, SCORE_SIZE, WHITE)
 
         pygame.display.update()
 
@@ -72,6 +73,7 @@ class Game:
                     bird.jump()
 
 
-def draw_text(screen, text, x, y, font, white):
+def draw_text(screen, text, x, y, font, size, white):
+    font = pygame.font.SysFont(font, size)
     img = font.render(text, True, white)
     screen.blit(img, (x - img.get_width() / 2, y))
