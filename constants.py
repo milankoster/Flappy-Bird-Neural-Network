@@ -14,8 +14,6 @@ SCORE_FONT = 'Bauhaus 93'
 SCORE_SIZE = 60
 WHITE = (255, 255, 255)
 
-
-
 # Files
 BASE_FILENAME = 'images/base.png'
 PIPE_FILENAME = 'images/pipe.png'
