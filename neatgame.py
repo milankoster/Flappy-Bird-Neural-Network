@@ -95,8 +95,7 @@ class NeatGame:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
-                # pygame.quit() #TODO Check if necessary
-                # quit()
+                quit()
                 break
 
 
