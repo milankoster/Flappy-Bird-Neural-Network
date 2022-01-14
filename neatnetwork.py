@@ -1,11 +1,15 @@
 ﻿import neat
 
 from bird import Bird
+from constants import BIRD_STARTER_X, BIRD_STARTER_Y
 from neatgame import NeatGame
+import os
 
 
 class NeatNetwork:
-    def __init__(self, config_path, has_reporter):
+    def __init__(self, has_reporter):
+        local_dir = os.path.dirname(__file__)
+        config_path = os.path.join(local_dir, 'config-feedforward.txt')
         config = neat.config.Config(neat.DefaultGenome, neat.DefaultReproduction,
                                     neat.DefaultSpeciesSet, neat.DefaultStagnation, config_path)
         self.population = neat.Population(config)
@@ -26,8 +30,8 @@ class NeatNetwork:
             genome.fitness = 0
             net = neat.nn.FeedForwardNetwork.create(genome, config)
             self.nets.append(net)
-            self.birds.append(Bird(230, 350))
+            self.birds.append(Bird(BIRD_STARTER_X, BIRD_STARTER_Y))
             self.gens.append(genome)
 
-        neat_game = NeatGame(self.birds, self.gens)
+        neat_game = NeatGame(self.birds, self.nets, self.gens)
         neat_game.run_game(30)
