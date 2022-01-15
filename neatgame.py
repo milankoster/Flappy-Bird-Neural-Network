@@ -58,7 +58,7 @@ class NeatGame:
             
             if len(pipes) > 0:
                 output = self.nets[birds.index(bird)].activate(
-                    (bird.y, abs(bird.y - pipes[pipe_ind].top_height), abs(bird.y - pipes[pipe_ind].bottom_height)))
+                    (bird.y, abs(pipes[pipe_ind].top_height - pipes[0].PIPE_TOP.get_height()), abs(pipes[pipe_ind].bottom_height)))
             else:
                 output = self.nets[birds.index(bird)].activate(
                     (bird.y, -1000, -1000))
