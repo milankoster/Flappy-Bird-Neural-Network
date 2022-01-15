@@ -1,6 +1,6 @@
 ﻿import pygame
 
-from PipeCollection import PipeCollection
+from pipe_collection import PipeCollection
 from bird import Bird
 from constants import *
 from ground import Base
