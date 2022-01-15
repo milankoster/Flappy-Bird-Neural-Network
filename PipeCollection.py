@@ -1,14 +1,13 @@
 ﻿import pygame
 
-from constants import DISPLAY_WIDTH, PIPES_PER_MINUTE
+from constants import DISPLAY_WIDTH, PIPE_WIDTH_GAP, PIPE_STARTER_X
 from pipe import Pipe
 
 
 class PipeCollection:
     def __init__(self):
-        self.pipes = []
+        self.pipes = [Pipe(PIPE_STARTER_X)]
         self.time = 0
-        self.frequency = 60 * 1000 / PIPES_PER_MINUTE
 
     def update(self):
         self._move_pipes()
@@ -24,7 +23,7 @@ class PipeCollection:
             pipe.move()
 
     def _add_pipes(self):
-        if pygame.time.get_ticks() - self.time > self.frequency:
+        if DISPLAY_WIDTH - PIPE_WIDTH_GAP > self.pipes[-1].x:
             self.pipes.append(Pipe(DISPLAY_WIDTH))
             self.time = pygame.time.get_ticks()
 

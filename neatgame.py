@@ -55,14 +55,14 @@ class NeatGame:
 
             # send bird location, top pipe location and bottom pipe location and determine from network whether to jump or not
             pipes = self.pipe_collection.pipes
-            
+
             if len(pipes) > 0:
                 output = self.nets[birds.index(bird)].activate(
                     (bird.y, abs(pipes[pipe_ind].top_height - pipes[0].PIPE_TOP.get_height()), abs(pipes[pipe_ind].bottom_height)))
             else:
                 output = self.nets[birds.index(bird)].activate(
                     (bird.y, -1000, -1000))
-            
+
             if output[0] > 0.5:  # we use a tanh activation function so result will be between -1 and 1. if over 0.5 jump
                 bird.jump()
 
@@ -87,7 +87,7 @@ class NeatGame:
         for bird in birds:
             bird.draw(self.game_display)
 
-        draw_text(self.game_display, str(self.score), X_SCORE, Y_SCORE, SCORE_FONT, SCORE_SIZE, WHITE)
+        draw_text(self.game_display, str(self.score), X_SCORE_POS, Y_SCORE_POS, SCORE_FONT, SCORE_SIZE, WHITE)
 
         pygame.display.update()
 
