@@ -1,8 +1,6 @@
-﻿from game import Game
-from neatgame import NeatGame
-import os
+﻿import os
 
-from neatnetwork import NeatNetwork
+from neat_network import NeatNetwork
 
 if __name__ == '__main__':
     local_dir = os.path.dirname(__file__)
