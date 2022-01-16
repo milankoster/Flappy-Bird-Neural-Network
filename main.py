@@ -1,6 +1,4 @@
-﻿import os
-
-from neat_network import NeatNetwork
+﻿from neat_network import NeatNetwork
 
 if __name__ == '__main__':
     neat = NeatNetwork(True)
