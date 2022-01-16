@@ -4,6 +4,7 @@ import random
 from constants import *
 
 pipe_img = pygame.image.load(PIPE_FILENAME)
+pipe_img = pygame.transform.scale(pipe_img, (pipe_img.get_width() * PIPE_SCALE, pipe_img.get_height() * PIPE_SCALE))
 
 
 class Pipe:
