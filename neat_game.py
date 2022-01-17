@@ -37,7 +37,7 @@ class NeatGame(Game):
                     self.genome.pop(self.birds.index(bird))
                     self.birds.pop(self.birds.index(bird))
 
-        print('Maximum Score Reached:', self.score)
+        print('Score Reached:', self.score)
         return self.score
 
     def _handle_game_events(self):
@@ -51,7 +51,7 @@ class NeatGame(Game):
         self._update_birds()
         self.ground.move()
         self.pipe_collection.update()
-        self._update_score()
+        self._update_score(self.birds[0])
 
     def _draw_window(self):
         self.game_display.blit(bg_img, (0, 0))
@@ -83,8 +83,8 @@ class NeatGame(Game):
             if output[0] > 0:  # tanh activation function result will be between -1 and 1. if over 0.5 jump
                 bird.jump()
 
-    def _update_score(self):
-        super()._update_score(self.birds[0])
+    def _update_score(self, bird):
+        super()._update_score(bird)
         for genome in self.genome:
             genome.fitness += 5
 
