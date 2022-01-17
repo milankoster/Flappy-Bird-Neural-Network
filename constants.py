@@ -12,6 +12,11 @@ SCORE_FONT = 'Bauhaus 93'
 SCORE_SIZE = 60
 WHITE = (255, 255, 255)
 
+# Labels
+LABEL_FONT = 'Raleway'
+LABEL_SIZE = 24
+
+
 # Files
 BASE_FILENAME = 'images/base.png'
 PIPE_FILENAME = 'images/pipe.png'

@@ -2,7 +2,7 @@
 
 from bird import Bird
 from constants import *
-from game import Game
+from game import Game, draw_text, bg_img
 from pipe_collection import PipeCollection
 
 
@@ -21,6 +21,15 @@ class SinglePlayer(Game):
 
             if self.bird.collide(self.pipe_collection):
                 self._reset()
+
+    def _draw_window(self):
+        self.game_display.blit(bg_img, (0, 0))
+        self.pipe_collection.draw(self.game_display)
+        self.ground.draw(self.game_display)
+        self.bird.draw(self.game_display)
+
+        draw_text(self.game_display, str(self.score), X_SCORE_POS, Y_SCORE_POS, SCORE_FONT, SCORE_SIZE, WHITE)
+        pygame.display.update()
 
     def _handle_game_events(self, bird):
         for event in pygame.event.get():
@@ -41,6 +50,3 @@ class SinglePlayer(Game):
         self.pipe_collection = PipeCollection()
         self.bird = Bird(BIRD_STARTER_X, BIRD_STARTER_Y)
         self.score = 0
-
-    def _draw_bird(self):
-        self.bird.draw(self.game_display)
