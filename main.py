@@ -1,11 +1,5 @@
-﻿from game import Game
-from neatgame import NeatGame
-import os
-
-from neatnetwork import NeatNetwork
+﻿from neat_network import NeatNetwork
 
 if __name__ == '__main__':
-    local_dir = os.path.dirname(__file__)
-    config_path = os.path.join(local_dir, 'config-feedforward.txt')
-    neat = NeatNetwork(True)
-    neat.run(300)
+    neat = NeatNetwork(True, 300)
+    neat.run(20)
