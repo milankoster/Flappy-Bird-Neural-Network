@@ -5,7 +5,7 @@ from game import Game, draw_text, bg_img
 
 
 class NeatGame(Game):
-    def __init__(self, birds, nets, genome, gen, max_score, score_aim, title):
+    def __init__(self, birds, nets, genome, gen, max_score, score_aim, title=TRAIN_TITLE):
         super().__init__(title)
         self.birds = birds
         self.nets = nets

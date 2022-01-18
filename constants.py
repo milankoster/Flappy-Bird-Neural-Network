@@ -1,5 +1,6 @@
 ﻿# General Game Information
 TITLE = 'Flappy Bird'
+TRAIN_TITLE = 'Flappy Bird Reinforcement Learning'
 DISPLAY_WIDTH = 315
 DISPLAY_HEIGHT = 560
 FPS = 120

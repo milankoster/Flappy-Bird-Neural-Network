@@ -8,7 +8,7 @@ from pipe_collection import PipeCollection
 
 class SinglePlayer(Game):
 
-    def __init__(self, title):
+    def __init__(self, title=TITLE):
         super().__init__(title)
         self.bird = Bird(BIRD_STARTER_X, BIRD_STARTER_Y)
 

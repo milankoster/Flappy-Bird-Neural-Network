@@ -1,9 +1,8 @@
 ﻿import pygame
-from pygame import base
 
 from constants import *
 
-bird_img = pygame.image.load('images/Flappy.png')
+bird_img = pygame.image.load(BIRD_FILENAME)
 
 
 class Bird:

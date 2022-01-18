@@ -40,7 +40,6 @@ class NeatNetwork:
             self.nets.append(net)
             self.gens.append(genome)
 
-        neat_game = NeatGame(self.birds, self.nets, self.gens, self.gen, self.max_score, self.score_aim,
-                             'Flappy Bird RL')
+        neat_game = NeatGame(self.birds, self.nets, self.gens, self.gen, self.max_score, self.score_aim)
         score = neat_game.run()
         self.max_score = max(self.max_score, score)
