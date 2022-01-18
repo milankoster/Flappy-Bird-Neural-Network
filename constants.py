@@ -18,10 +18,10 @@ LABEL_SIZE = 24
 
 
 # Files
-BASE_FILENAME = 'images/base.png'
-PIPE_FILENAME = 'images/pipe.png'
-BIRD_FILENAME = 'images/bird1.png'
-BACKGROUND_FILENAME = 'images/bg.png'
+BASE_FILENAME = '../Flappy Bird Reinforcement Learning/images/base.png'
+PIPE_FILENAME = '../Flappy Bird Reinforcement Learning/images/pipe.png'
+BIRD_FILENAME = '../Flappy Bird Reinforcement Learning/images/bird1.png'
+BACKGROUND_FILENAME = '../Flappy Bird Reinforcement Learning/images/bg.png'
 NEAT_CONFIG = 'config-feedforward.txt'
 
 # Ground Info
