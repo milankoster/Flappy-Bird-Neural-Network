@@ -12,7 +12,7 @@ class SinglePlayer(Game):
         super().__init__(title)
         self.bird = Bird(BIRD_STARTER_X, BIRD_STARTER_Y)
 
-    def run_game(self):
+    def run(self):
         while self.running:
             self.clock.tick(FPS)
             self._handle_game_events(self.bird)
