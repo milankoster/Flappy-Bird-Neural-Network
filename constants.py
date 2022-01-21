@@ -21,7 +21,7 @@ LABEL_SIZE = 24
 # Files
 BASE_FILENAME = '../Flappy Bird Reinforcement Learning/images/base.png'
 PIPE_FILENAME = '../Flappy Bird Reinforcement Learning/images/pipe.png'
-BIRD_FILENAME = '../Flappy Bird Reinforcement Learning/images/Flappy.png.png'
+BIRD_FILENAME = '../Flappy Bird Reinforcement Learning/images/Flappy.png'
 BACKGROUND_FILENAME = '../Flappy Bird Reinforcement Learning/images/bg.png'
 NEAT_CONFIG = 'config-feedforward.txt'
 

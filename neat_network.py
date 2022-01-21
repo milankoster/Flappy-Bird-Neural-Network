@@ -29,7 +29,7 @@ class NeatNetwork:
         print('\nBest genome:\n{!s}'.format(winner))
 
         node_names = {-1: 'Bird Y', -2: 'Pipe Bottom Y', -3: "Pipe Top Y", 0: 'Jump'}
-        visualize.draw_net(self.config, winner, True)
+        visualize.draw_net(self.config, winner, True, node_names=node_names)
 
     def eval_genomes(self, genomes, config):
         self.gen += 1
