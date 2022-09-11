@@ -4,7 +4,9 @@ Flappy Bird Neural Network is a two week open programme challenge. The goal is t
 
 Flappy Bird re-created using pygame. The neural network used within this project is NEAT.
 
-![](https://imgur.com/a/zoU7h4v)
+<img src="https://i.imgur.com/MFo0eUV.gif" alt="drawing" width="500"/>
+
+
 
 After a bit of training, the neural network is able to stay alive indefinitely. It is given the bird's height as well as the height of the pipes, but only utilises one of the pipe's heights. This is because the gap in the pipes is always the same size.  
 
