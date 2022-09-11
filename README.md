@@ -4,8 +4,7 @@ Flappy Bird Neural Network is a two week open programme challenge. The goal is t
 
 Flappy Bird re-created using pygame. The neural network used within this project is NEAT.
 
-<img src="https://user-images.githubusercontent.com/58393068/189551054-3291ac1c-c269-4dac-bb1f-37894d2f5e37.mp4
-" alt="drawing" width="500"/>
+<img src="https://user-images.githubusercontent.com/58393068/189551054-3291ac1c-c269-4dac-bb1f-37894d2f5e37.mp4" alt="drawing" width="500"/>
 
 
 
