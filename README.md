@@ -8,4 +8,4 @@ Flappy Bird re-created using pygame. The neural network used within this project
 
 After a bit of training, the neural network is able to stay alive indefinitely. It is given the bird's height as well as the height of the pipes, but only utilises one of the pipe's heights. This is because the gap in the pipes is always the same size.  
 
-![enter image description here](https://i.imgur.com/4v84Jsb.png)
+<img src="https://i.imgur.com/4v84Jsb.png" alt="drawing" width="500"/>
